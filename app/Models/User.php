@@ -3,15 +3,32 @@
 namespace App\Models;
 
 // use Illuminate\Contracts\Auth\MustVerifyEmail;
+
+use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
+use Spatie\Permission\Traits\HasRoles;
+use JeffGreco13\FilamentBreezy\Traits\TwoFactorAuthenticatable;
+use Bavix\Wallet\Traits\HasWallet;
+use Bavix\Wallet\Interfaces\Wallet;
+use Bavix\Wallet\Traits\HasWalletFloat;
+use Bavix\Wallet\Interfaces\WalletFloat;
+use Bavix\Wallet\Traits\HasWallets;
+use Filament\Models\Contracts\HasAvatar;
+use Illuminate\Database\Eloquent\SoftDeletes;
 
-class User extends Authenticatable
+
+class User extends Authenticatable implements MustVerifyEmail, Wallet, WalletFloat
 {
-    use HasApiTokens, HasFactory, Notifiable;
+    use HasRoles, HasWallet, HasWalletFloat, HasWallets, SoftDeletes;
+    use HasApiTokens, HasFactory, Notifiable, TwoFactorAuthenticatable;
 
+/*   public function getFilamentAvatarUrl(): ?string
+    {
+        return $this->avatar;
+    }  */
     /**
      * The attributes that are mass assignable.
      *
@@ -20,7 +37,18 @@ class User extends Authenticatable
     protected $fillable = [
         'name',
         'email',
+        'avatar',
         'password',
+        'country',
+        'phone',
+        'phonecode',
+        'gender',
+        'bio',
+        'dob',
+        'address',
+        'zipcode',
+        'currency',
+        'deleted_at'
     ];
 
     /**
@@ -40,6 +68,6 @@ class User extends Authenticatable
      */
     protected $casts = [
         'email_verified_at' => 'datetime',
-        'password' => 'hashed',
+        'avatar' => 'array',
     ];
 }
