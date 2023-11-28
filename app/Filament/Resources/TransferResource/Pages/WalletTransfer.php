@@ -49,7 +49,7 @@ class WalletTransfer extends Page implements HasForms
                     Grid::make(2)->schema([
                         Select::make('wallet_1')->label('Transfer Wallet')
                             ->options([
-                                'usd-wallet' => 'USD Wallet',
+                                'main-wallet' => 'MAIN Wallet',
                                 'eth-wallet' => 'ETH Wallet',
                                 'trade-wallet' => 'TRADE Wallet',
 
@@ -66,7 +66,7 @@ class WalletTransfer extends Page implements HasForms
                     Grid::make(2)->schema([
                         Select::make('wallet_2')->label('Recieving Wallet')
                             ->options([
-                                'usd-wallet' => 'USD Wallet',
+                                'main-wallet' => 'MAIN Wallet',
                                 'eth-wallet' => 'ETH Wallet',
                                 'trade-wallet' => 'TRADE Wallet',
 

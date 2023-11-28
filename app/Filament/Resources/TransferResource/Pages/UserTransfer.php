@@ -48,7 +48,7 @@ class UserTransfer extends Page implements HasForms
                     Grid::make(2)->schema([
                         Select::make('wallet')->label('Wallet')
                             ->options([
-                                'usd-wallet' => 'USD Wallet',
+                                'main-wallet' => 'MAIN Wallet',
                                 'eth-wallet' => 'ETH Wallet',
                                 'trade-wallet' => 'TRADE Wallet',
 
@@ -67,7 +67,7 @@ class UserTransfer extends Page implements HasForms
                         Select::make('user_id')->label('User')->options(User::all()->pluck('name', 'id'))->searchable()->required()->helperText('Select User'),
                         Select::make('user_wallet')->label('Wallet')
                             ->options([
-                                'usd-wallet' => 'USD Wallet',
+                                'main-wallet' => 'MAIN Wallet',
                                 'eth-wallet' => 'ETH Wallet',
                                 'trade-wallet' => 'TRADE Wallet',
 

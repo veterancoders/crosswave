@@ -81,7 +81,7 @@ class PersonalWallet extends Page  implements HasTable
         $currency_code =  CountryCode();
         $deposit_address =  app(DepositSettings::class);
         return [
-            Action::make('Deposit')
+            Action::make('Add Money')
                 ->action(function (array $data) {
 
                     if ($data['payment_method_id'] == '1') {
@@ -208,7 +208,7 @@ class PersonalWallet extends Page  implements HasTable
                             Grid::make(2)->schema([
                                 Select::make('wallet_type')->label('Deposit Into')
                                     ->options([
-                                        'usd-wallet' => 'USD Wallet',
+                                        'main-wallet' => 'MAIN Wallet',
                                         'eth-wallet' => 'ETH Wallet',
                                         'trade-wallet' => 'TRADE Wallet',
 
@@ -313,7 +313,7 @@ class PersonalWallet extends Page  implements HasTable
                     Grid::make(2)->schema([
                         Select::make('wallet')->label('Withdraw From')
                             ->options([
-                                'usd-wallet' => 'USD Wallet',
+                                'main-wallet' => 'MAIN Wallet',
                                 'eth-wallet' => 'ETH Wallet',
                                 'trade-wallet' => 'TRADE Wallet',
 

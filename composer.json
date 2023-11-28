@@ -8,6 +8,7 @@
         "php": "^8.0.2",
         "3x1io/filament-user": "^1.1",
         "amrshawky/laravel-currency": "^5.0",
+        "ashallendesign/laravel-exchange-rates": "^7.1",
         "bavix/laravel-wallet": "*",
         "bezhansalleh/filament-exceptions": "^0.0.6",
         "bezhansalleh/filament-language-switch": "^1.0",

@@ -69,7 +69,7 @@ class WithdrawalResource extends Resource
 
                             Select::make('wallet')->label('Wallet')
                                 ->options([
-                                    'usd-wallet' => 'USD Wallet',
+                                    'main-wallet' => 'MAIN Wallet',
                                     'eth-wallet' => 'ETH Wallet',
                                     'trade-wallet' => 'TRADE Wallet',
 

@@ -29,7 +29,7 @@ class ManageGeneral extends SettingsPage
                 TextInput::make('site_name')
                     ->label('Site Name')
                     ->required(),
-                Select::make('default_currency')->label('Default Currency')->options(Currency::all()->pluck('name', 'code'))->disabled(),
+                Select::make('default_currency')->label('Default Currency')->options(Currency::all()->pluck('name', 'code'))->default('USD'),
             ])
 
         ];

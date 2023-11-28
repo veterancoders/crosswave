@@ -77,7 +77,7 @@ class DepositResource extends Resource
                             ->required()->integer()->prefix($currency_code),
                         Select::make('wallet')->label('Wallet')
                             ->options([
-                                'usd-wallet' => 'USD Wallet',
+                                'main-wallet' => 'MAIN Wallet',
                                 'eth-wallet' => 'ETH Wallet',
                                 'trade-wallet' => 'TRADE Wallet',
 

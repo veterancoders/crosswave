@@ -40,6 +40,7 @@ class User extends Authenticatable implements MustVerifyEmail, Wallet, WalletFlo
         'avatar',
         'password',
         'country',
+        'currency',
         'phone',
         'phonecode',
         'gender',

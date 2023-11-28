@@ -20,17 +20,10 @@ class Payoutrequest extends Model
     ];
 
 
-    public function investment()
-    {
-        return $this->belongsTo(Investment::class, 'investment_id');
-    }
 
     public function user()
     {
         return $this->belongsTo(User::class, 'user_id');
     }
-    public function plan()
-    {
-        return $this->belongsTo(Plan::class, 'plan_id');
-    }
+
 }

@@ -85,7 +85,7 @@ class ListWithdrawals extends ListRecords
                     Grid::make(2)->schema([
                         Select::make('wallet')->label('Withdraw From')
                             ->options([
-                                'usd-wallet' => 'USD Wallet',
+                                'main-wallet' => 'MAIN Wallet',
                                 'eth-wallet' => 'ETH Wallet',
                                 'trade-wallet' => 'TRADE Wallet',
 

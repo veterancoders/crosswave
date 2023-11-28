@@ -182,8 +182,8 @@ return [
         'model' => Wallet::class,
         'creating' => [],
         'default' => [
-            'name' => 'USD Wallet',
-            'slug' => 'usd-wallet',
+            'name' => 'Main Wallet',
+            'slug' => 'main-wallet',
             'meta' => [],
         ],
     ],

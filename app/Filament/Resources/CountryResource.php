@@ -35,14 +35,14 @@ class CountryResource extends Resource
                                 Forms\Components\TextInput::make('name')
                                     ->required()
                                     ->maxLength(250),
-                                Forms\Components\TextInput::make('nicename')
+                                Forms\Components\TextInput::make('currency')
                                     ->maxLength(250),
                             ]),
                         Grid::make(2)
                             ->schema([
 
-                                Forms\Components\TextInput::make('iso')
-                                    ->required()
+                                Forms\Components\TextInput::make('iso2')
+                                  
                                     ->maxLength(2),
                                 Forms\Components\TextInput::make('iso3')
                                     ->maxLength(3),
@@ -50,10 +50,9 @@ class CountryResource extends Resource
                         Grid::make(2)
                             ->schema([
 
-                                Forms\Components\TextInput::make('numcode')->numeric(),
+                                Forms\Components\TextInput::make('capital'),
                                 Forms\Components\TextInput::make('phonecode')
-                                    ->tel()
-                                    ->required(),
+                                    ->tel(),
                             ]),
                         Toggle::make('active'),
                     ]),
@@ -64,11 +63,11 @@ class CountryResource extends Resource
     {
         return $table
             ->columns([
-                Tables\Columns\TextColumn::make('iso')->searchable(),
+               
                 Tables\Columns\TextColumn::make('name')->searchable(),
-                Tables\Columns\TextColumn::make('nicename')->searchable(),
+               
                 Tables\Columns\TextColumn::make('iso3')->searchable(),
-                Tables\Columns\TextColumn::make('numcode')->searchable(),
+          
                 Tables\Columns\TextColumn::make('phonecode')->searchable(),
                 BooleanColumn::make('active'),
 

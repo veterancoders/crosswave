@@ -451,8 +451,11 @@ Route::get('/paypal_chekout', function () {
 
 Route::get('/check', function() {
 
-dd(config('filament.default_avatar_provider'));
+    $user = Filament::auth()->user();
 
+    $usercurrency = $user->currency;
+
+    dd($usercurrency);
 });
 
 //INSTALLER

@@ -52,9 +52,9 @@ class WalletTransactionResource extends Resource
        
         return $table
             ->columns([
-                Tables\Columns\TextColumn::make('user.email')->searchable(),
-                Tables\Columns\TextColumn::make('amount')->prefix($currency->symbol),
+                Tables\Columns\TextColumn::make('user.email')->searchable()->visible(isAdmin()),
                 Tables\Columns\TextColumn::make('reason')->label('Transaction'),
+                Tables\Columns\TextColumn::make('amount')->prefix($currency->symbol),
                 Tables\Columns\TextColumn::make('wallet')->searchable(),
                 BadgeColumn::make('status')->label('Status')->searchable()
                 ->colors([
@@ -85,7 +85,12 @@ class WalletTransactionResource extends Resource
     }
     public static function getEloquentQuery(): Builder
     {
-        return parent::getEloquentQuery()->latest();
+        if (isAdmin()) {
+            return parent::getEloquentQuery()->latest();
+        } elseif (isCustomer()) {
+            return parent::getEloquentQuery()
+                ->where('user_id', auth()->id())->latest();
+        }
     }
     public static function getPages(): array
     {
