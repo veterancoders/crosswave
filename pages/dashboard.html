@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Crosswave - Dashboard</title>
+        <script src="../js/dashboard.js" defer></script>
+    </head>
+    <body>
+        <div>
+            <div class="balance">
+                <section class="group1">
+                    <button class="select-country">
+                        <img
+                            src="/assets/naijaflag.png"
+                            alt="flag"
+                            className="w-8 h-8 mr-1" />
+
+                        <span>
+                            <img src="/assets/unfold.svg" alt="" />
+                        </span>
+                    </button>
+
+                    <p class="balance-text">
+                        <span class="text">Your Balance</span>
+                        <span class="amount">
+                            <strong>NGN 1,200.75 </strong>
+                            <img
+                                src="/assets/eye-24.png"
+                                alt="display balance" />
+                        </span>
+                    </p>
+                </section>
+
+                <section class="group2">
+                    <p>
+                        <button class="add-cash">
+                            <img src="/assets/add.svg" alt="add cash" />
+                            <span> Add Cash </span>
+                        </button>
+                        <button
+                            id="convertBtn"
+                            class="convert convert-btn"
+                            onclick="openConvertModal()">
+                            <img src="/assets/convert.svg" alt="convert cash" />
+                            Convert
+                        </button>
+                        <button class="convert">...</button>
+                    </p>
+                </section>
+
+                <section class="group3">
+                    <button class="request">Request</button>
+
+                    <button class="send">
+                        <a href="#" onclick="loadPage('/pages/transfer')">
+                            Send
+                        </a>
+                    </button>
+                </section>
+
+                <section class="group4">
+                    <h2 class="title">Transaction History</h2>
+
+                    <article>
+                        <div class="emoji">
+                            <span>E</span>
+                        </div>
+
+                        <div class="description">
+                            <div class="description-wrapper">
+                                <p>
+                                    <span class="text1">
+                                        You purchased Airtime
+                                    </span>
+
+                                    <span class="text2">
+                                        Aug 21 at 9:50 PM
+                                    </span>
+                                </p>
+
+                                <span class="amount">
+                                    <img
+                                        src="/assets/naira.png"
+                                        alt="naira"
+                                        className="inline-block w-4" />
+                                    28700.00
+                                </span>
+                            </div>
+
+                            <p class="main-text">
+                                Sent
+                                <span>
+                                    <span class="img-wrapper">
+                                        <img
+                                            src="/assets/naira.png"
+                                            alt="naira" />
+                                        <span>28700.00</span>
+                                    </span>
+                                    worth of airtime to +234 7000001. You saved
+                                    <span class="img-wrapper">
+                                        <img
+                                            src="/assets/naira.png"
+                                            alt="naira" />
+                                        10.00!
+                                    </span>
+                                </span>
+                            </p>
+                        </div>
+                    </article>
+
+                    <article>
+                        <div class="emoji">
+                            <span>E</span>
+                        </div>
+
+                        <div class="description">
+                            <div class="description-wrapper">
+                                <p>
+                                    <span class="text1">
+                                        You purchased Airtime
+                                    </span>
+
+                                    <span class="text2">
+                                        Aug 21 at 9:50 PM
+                                    </span>
+                                </p>
+
+                                <span class="amount">
+                                    <img
+                                        src="/assets/naira.png"
+                                        alt="naira"
+                                        className="inline-block w-4" />
+                                    28700.00
+                                </span>
+                            </div>
+
+                            <p class="main-text">
+                                Sent
+                                <span>
+                                    <span class="img-wrapper">
+                                        <img
+                                            src="/assets/naira.png"
+                                            alt="naira" />
+                                        <span>28700.00</span>
+                                    </span>
+                                    worth of airtime to +234 7000001. You saved
+                                    <span class="img-wrapper">
+                                        <img
+                                            src="/assets/naira.png"
+                                            alt="naira" />
+                                        10.00!
+                                    </span>
+                                </span>
+                            </p>
+                        </div>
+                    </article>
+
+                    <article>
+                        <div class="emoji">
+                            <span>E</span>
+                        </div>
+
+                        <div class="description">
+                            <div class="description-wrapper">
+                                <p>
+                                    <span class="text1">
+                                        You purchased Airtime
+                                    </span>
+
+                                    <span class="text2">
+                                        Aug 21 at 9:50 PM
+                                    </span>
+                                </p>
+
+                                <span class="amount">
+                                    <img
+                                        src="/assets/naira.png"
+                                        alt="naira"
+                                        className="inline-block w-4" />
+                                    28700.00
+                                </span>
+                            </div>
+
+                            <p class="main-text">
+                                Sent
+                                <span>
+                                    <span class="img-wrapper">
+                                        <img
+                                            src="/assets/naira.png"
+                                            alt="naira" />
+                                        <span>28700.00</span>
+                                    </span>
+                                    worth of airtime to +234 7000001. You saved
+                                    <span class="img-wrapper">
+                                        <img
+                                            src="/assets/naira.png"
+                                            alt="naira" />
+                                        10.00!
+                                    </span>
+                                </span>
+                            </p>
+                        </div>
+                    </article>
+                </section>
+
+                <section id="conversion-modal" class="conversion">
+                    <div class="conversion-wrapper">
+                        <button
+                            id="close-conversion"
+                            class="btn"
+                            onclick="closeConvertModal()">
+                            X
+                        </button>
+
+                        <h1>
+                            <span class="text1">Convert NGN</span>
+                            <span class="text2">
+                                <img src="/assets/naira.png" alt="naira" />
+                                <span> 1,270.75 Available </span>
+                            </span>
+                        </h1>
+
+                        <div class="conversion-form">
+                            <div class="form-input">
+                                <label for="convert"> Convert </label>
+
+                                <div class="input-wrapper">
+                                    <button>
+                                        <img
+                                            src="/assets/naijaflag.png"
+                                            alt="nigerian flag" />
+                                        NGN
+                                    </button>
+
+                                    <input
+                                        type="text"
+                                        name="convert"
+                                        id="convert"
+                                        placeholder="0.00"
+                                        oninput="handleInputChange(event)" />
+                                    <!-- onchange="handleInputChange(event)" /> -->
+                                </div>
+                            </div>
+
+                            <div class="rate">
+                                <p>
+                                    <span class="text1">Rate: </span>
+                                    <span class="text2">
+                                        <img
+                                            src="/assets/naira.png"
+                                            alt="naira"
+                                            className="inline w-4 mb-[3px]" />
+                                        1,183.4082 = $1.00
+                                    </span>
+                                </p>
+                            </div>
+
+                            <div class="form-input">
+                                <label for="to"> To </label>
+
+                                <div class="input-wrapper">
+                                    <button>
+                                        <img
+                                            src="/assets/usflag.png"
+                                            alt="us flag" />
+                                        NGN
+                                    </button>
+
+                                    <input
+                                        type="text"
+                                        name="to"
+                                        id="to"
+                                        placeholder="0.00"
+                                        oninput="handleInputChange(event)" />
+                                </div>
+                            </div>
+
+                            <div class="btn-wrapper">
+                                <button
+                                    class="submit-btn"
+                                    onclick="submitFormValues()">
+                                    Next
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </body>
+</html>

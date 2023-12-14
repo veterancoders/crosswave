@@ -1,0 +1,127 @@
+@import url(base.css);
+@import url(dashboard.css);
+@import url(transfer.css);
+
+.head-container {
+    position: fixed;
+    left: 0;
+    right: 0;
+    z-index: 1;
+    background-color: #f4f4f4;
+    border-bottom: 1px solid #dedede;
+    padding: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 1280px;
+    margin: 0 auto;
+}
+
+.head-container h1 {
+    font-weight: bold;
+    border-radius: 50%;
+    font-size: 1.25rem;
+    line-height: 1.75rem;
+}
+
+nav .desktop-menu {
+    display: none;
+}
+
+.desktop-menu li {
+    margin-right: 2rem;
+}
+
+.desktop-menu li a {
+    text-transform: capitalize;
+}
+
+.desktop-menu li a:active {
+    border-bottom: 2px solid #ffcd29;
+    padding-bottom: 4px;
+}
+
+nav .menu-icon {
+    border: none;
+}
+
+.mobile-menu {
+    position: fixed;
+    top: 0;
+    right: 0;
+    z-index: 20;
+    background-color: #fff;
+    height: 100vh;
+    width: 75%;
+    border-top-left-radius: 0.5rem;
+    border-bottom-left-radius: 0.5rem;
+    transition-duration: 200ms;
+    transform: translateX(100%);
+}
+.mobile-menu button {
+    position: absolute;
+    top: 2rem;
+    left: 1rem;
+    background: none;
+    font-weight: 600;
+    font-size: 1.5rem;
+    line-height: 1.75rem;
+    cursor: pointer;
+}
+
+.mobile-menu.show {
+    transform: translateX(0);
+}
+
+.mobile-menu .inner {
+    padding: 4rem 2rem;
+}
+
+.mobile-menu .inner ul {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    font-weight: 600;
+}
+
+.mobile-menu .inner ul li {
+    margin: 0.75rem 0;
+}
+
+.mobile-menu .inner ul a {
+    text-transform: capitalize;
+}
+
+.footer {
+    background-color: #ffcd29;
+}
+
+.footer .inner {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 1rem;
+    font-weight: bold;
+}
+
+@media (min-width: 768px) {
+    nav .desktop-menu {
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        font-weight: 600;
+        opacity: 0.8;
+    }
+    nav .menu-icon {
+        display: none;
+    }
+    nav .mobile-menu {
+        display: none;
+    }
+}
+
+@media (min-width: 1024px) {
+    nav {
+        flex-basis: 40%;
+    }
+}

@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+        <link rel="stylesheet" href="/styles/index.css" />
+        <title>Crosswave</title>
+        <script src="js/index.js" defer></script>
+    </head>
+    <body>
+        <div id="backdrop"></div>
+        <!-- mobile menu  -->
+        <div class="mobile-menu">
+            <button>X</button>
+            <div class="inner">
+                <ul>
+                    <li>
+                        <a href="/">home</a>
+                    </li>
+                    <li>
+                        <a href="#" onclick="loadPage('/pages/dashboard')"
+                            >dashboard</a
+                        >
+                    </li>
+                    <li>
+                        <a href="/">support</a>
+                    </li>
+                    <li>
+                        <a href="/">about</a>
+                    </li>
+                    <li>
+                        <a href="/">blog</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="wrapper">
+            <header>
+                <div class="head-container">
+                    <h1>
+                        <a href="/">CrossWave</a>
+                    </h1>
+
+                    <nav>
+                        <div>
+                            <!-- desktop menu -->
+                            <ul class="desktop-menu">
+                                <li>
+                                    <a href="/">home</a>
+                                </li>
+                                <li>
+                                    <a
+                                        href="#"
+                                        onclick="loadPage('/pages/dashboard')"
+                                        >dashboard</a
+                                    >
+                                </li>
+                                <li>
+                                    <a href="/">support</a>
+                                </li>
+                                <li>
+                                    <a href="/">about</a>
+                                </li>
+                                <li>
+                                    <a href="/">blog</a>
+                                </li>
+                            </ul>
+
+                            <!-- mobile nav icon  -->
+                            <button class="menu-icon">
+                                <svg
+                                    width="32"
+                                    height="32"
+                                    viewBox="0 0 48 48"
+                                    fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <rect
+                                        x="8"
+                                        y="8"
+                                        width="32"
+                                        height="32"
+                                        stroke="black"
+                                        stroke-width="16" />
+                                    <path d="M0 0H48V48H0V0Z" fill="#ededed" />
+                                    <path
+                                        d="M7 10H41"
+                                        stroke="black"
+                                        stroke-width="2" />
+                                    <path
+                                        d="M7 24H41"
+                                        stroke="black"
+                                        stroke-width="2" />
+                                    <path
+                                        d="M7 38H41"
+                                        stroke="black"
+                                        stroke-width="2" />
+                                </svg>
+                            </button>
+
+                            <!-- mobile menu  -->
+                            <!-- <div class="mobile-menu">
+                                <button>X</button>
+                                <div class="inner">
+                                    <ul>
+                                        <li>
+                                            <a href="/">home</a>
+                                        </li>
+                                        <li>
+                                            <a
+                                                href="#"
+                                                onclick="loadPage('/pages/dashboard')"
+                                                >dashboard</a
+                                            >
+                                        </li>
+                                        <li>
+                                            <a href="#"
+                                            
+                                            onclick="loadPage('/pages/transfer')"
+                                            >support</a>
+                                        </li>
+                                        <li>
+                                            <a href="/about">about</a>
+                                        </li>
+                                        <li>
+                                            <a href="/blog">blog</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div> -->
+                        </div>
+                    </nav>
+                </div>
+            </header>
+
+            <main id="main-content" class="main-content">
+                <div>Landing Page</div>
+            </main>
+
+            <footer>
+                <div class="footer">
+                    <div class="inner">&copy;2023 CrossWave Footer</div>
+                </div>
+            </footer>
+        </div>
+    </body>
+</html>
