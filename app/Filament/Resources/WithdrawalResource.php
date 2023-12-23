@@ -100,7 +100,8 @@ class WithdrawalResource extends Resource
                 Tables\Columns\TextColumn::make('user_id')->weight('bold')->label('User')->visible(isAdmin())->formatStateUsing(fn (string $state): string => __(User::find($state)->email)),
                 Tables\Columns\TextColumn::make('payment_method')->searchable(),
                 Tables\Columns\TextColumn::make('wallet'),
-                Tables\Columns\TextColumn::make('amount')->weight('bold')->prefix($currency->symbol),
+                Tables\Columns\TextColumn::make('currency'),
+                Tables\Columns\TextColumn::make('amount')->weight('bold'),
 
                 BadgeColumn::make('status')->label('Status')->searchable()
                     ->colors([

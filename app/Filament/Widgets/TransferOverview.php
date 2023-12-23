@@ -11,7 +11,8 @@ class TransferOverview extends BaseWidget
     protected function getCards(): array
     {
         return [
-            Card::make('Transfer to other users', 'USER TRANSFER')->url(TransferResource::getUrl('usertransfer')),
+            Card::make('Transfer internationally to other users', 'USER TRANSFER (International)')->url(TransferResource::getUrl('usertransfer')),
+            Card::make('Transfer locally to other users', 'USER TRANSFER (Local)')->url(TransferResource::getUrl('usertransfer')),
             Card::make('Transfer between wallets', 'WALLET TRANSFER')->url(TransferResource::getUrl('walletransfer')),
           
         ];

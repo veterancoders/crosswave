@@ -231,7 +231,7 @@ class Dashboard extends BasePage implements HasTable, HasForms
                         Step::make('Amount')
                             ->description('Add amount to deposit.')
                             ->schema([
-                                TextInput::make('amount')->label('Amount')->numeric()->required()->integer()->maxLength(11)->minValue(50)->helperText('Minimum deposit is 50USD')->reactive()->afterStateUpdated(function ($state, callable $set) {
+                                TextInput::make('amount')->label('Amount')->numeric()->required()->integer()->maxLength(11)->minValue(50)->reactive()->afterStateUpdated(function ($state, callable $set) {
 
                                     $set('amount_check', $state);
                                 })->prefix($currency_code),
@@ -331,8 +331,7 @@ class Dashboard extends BasePage implements HasTable, HasForms
                         Textarea::make('details')->required()->hidden(fn (Closure $get) => $get('payment_method') == null)
                             ->helperText('Input your withdrawal details. Accurate Information is required according to selected withdrawal method')
                     ]),
-
-
+                   
 
             ];
         } else {

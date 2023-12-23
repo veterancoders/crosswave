@@ -13,6 +13,7 @@ class Deposit extends Model
         'user_id',
         'deposit_type',
         'refrence',
+        'currency',
         'wallet',
         'payment_proof',
         'has_payment_proof',

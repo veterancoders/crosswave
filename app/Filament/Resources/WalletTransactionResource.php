@@ -48,13 +48,13 @@ class WalletTransactionResource extends Resource
     public static function table(Table $table): Table
     {  
 
-        $currency = Currency::where('code', CountryCode())->first();
        
         return $table
             ->columns([
                 Tables\Columns\TextColumn::make('user.email')->searchable()->visible(isAdmin()),
                 Tables\Columns\TextColumn::make('reason')->label('Transaction'),
-                Tables\Columns\TextColumn::make('amount')->prefix($currency->symbol),
+                Tables\Columns\TextColumn::make('currency_code'),
+                Tables\Columns\TextColumn::make('amount'),
                 Tables\Columns\TextColumn::make('wallet')->searchable(),
                 BadgeColumn::make('status')->label('Status')->searchable()
                 ->colors([

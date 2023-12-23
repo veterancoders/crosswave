@@ -70,7 +70,6 @@ class Convert extends Widget implements HasForms
 
                             if ($state != 0) {
 
-
                                 if (!is_null($currencyconvertto)) {
                                     $rate = $exchangeRates->convert($state, $currency_code, $currencyconvertto, Carbon::now());
                                     $set('To', $rate);

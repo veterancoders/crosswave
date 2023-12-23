@@ -40,11 +40,9 @@ Route::get('/', function (Request $request) {
     if (Cookie::has('ref_code')) {
 
         return null;
-    }else{
+    } else {
         setcookie('ref_code', $request->ref);
     }
-
-
 });
 
 Route::get('payment/verify', function () {
@@ -149,7 +147,7 @@ Route::get('payment/verify', function () {
 
                                 $profit = $refferalamount * $rp / 100;
 
-                                 $checkrefferal->has_completed_transaction = 1;
+                                $checkrefferal->has_completed_transaction = 1;
                                 $checkrefferal->profit = $profit;
                                 $checkrefferal->save();
 
@@ -157,13 +155,13 @@ Route::get('payment/verify', function () {
                                 $referrer->deposit($profit);
 
                                 $recipient = $referrer;
-        
+
                                 Notification::make()
                                     ->title('Hurray! A referral has completed a transaction')
                                     ->sendToDatabase($recipient);
-                    
+
                                 event(new DatabaseNotificationsSent($recipient));
-                            }else{
+                            } else {
 
                                 return null;
                             }
@@ -449,7 +447,7 @@ Route::get('/paypal_chekout', function () {
 
 //Checker
 
-Route::get('/check', function() {
+Route::get('/check', function () {
 
     $user = Filament::auth()->user();
 

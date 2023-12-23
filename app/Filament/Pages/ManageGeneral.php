@@ -30,6 +30,8 @@ class ManageGeneral extends SettingsPage
                     ->label('Site Name')
                     ->required(),
                 Select::make('default_currency')->label('Default Currency')->options(Currency::all()->pluck('name', 'code'))->default('USD'),
+                TextInput::make('transfer_rate')
+                ->label('Transfer Rate')->suffix('%')->helperText('Set the transfer rate in percentage')->numeric(),
             ])
 
         ];

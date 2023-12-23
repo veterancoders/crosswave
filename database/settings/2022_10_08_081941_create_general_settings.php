@@ -8,7 +8,8 @@ class CreateGeneralSettings extends SettingsMigration
     {
         $this->migrator->add('general.site_name', '');
         $this->migrator->add('general.site_active', true);
-        $this->migrator->add('general.default_currency', 'USD');
+        $this->migrator->add('general.default_currency', 'USD'); 
+        $this->migrator->add('general.transfer_rate', 0);
     
     }
 }

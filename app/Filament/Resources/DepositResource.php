@@ -97,15 +97,13 @@ class DepositResource extends Resource
 
     public static function table(Table $table): Table
     {
-        $currency_code =  CountryCode();
-
-        $currency = Currency::where('code', $currency_code)->first();
-
+  
         return $table
             ->columns([
                 Tables\Columns\TextColumn::make('user.name')->searchable(),
                 Tables\Columns\TextColumn::make('deposit_type'),
-                Tables\Columns\TextColumn::make('amount')->prefix($currency->symbol),
+                Tables\Columns\TextColumn::make('currency'),
+                Tables\Columns\TextColumn::make('amount'),
                 Tables\Columns\TextColumn::make('wallet'),
                 BooleanColumn::make('has_payment_proof'),
                 Tables\Columns\TextColumn::make('status'),

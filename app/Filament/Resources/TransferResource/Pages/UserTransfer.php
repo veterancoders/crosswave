@@ -64,14 +64,14 @@ class UserTransfer extends Page implements HasForms
 
                     Grid::make(2)->schema([
 
-                        Select::make('user_id')->label('User')->options(User::all()->pluck('name', 'id'))->searchable()->required()->helperText('Select User'),
+                        TextInput::make('user_id')->label('Reciepient Email')->required()->helperText('Input reciepient email'),
                         Select::make('user_wallet')->label('Wallet')
                             ->options([
                                 'main-wallet' => 'MAIN Wallet',
                                 'eth-wallet' => 'ETH Wallet',
                                 'trade-wallet' => 'TRADE Wallet',
 
-                            ])->required()->helperText('Select Wallet to transfer into'),
+                            ])->default('main-wallet')->required()->helperText('Select Wallet to transfer into'),
                     ]),
                     TextInput::make('amount')->label('Transfer Amount')->gt(0)->numeric()->required()->prefix($currency_code),
 
@@ -85,7 +85,10 @@ class UserTransfer extends Page implements HasForms
     {
 
         $first = Auth::user();
-        $last = User::find($this->user_id);
+
+        $last = User::where('email', $this->user_id)->first();
+if(!is_null($last)){
+
 
         if ($this->amount == 0) {
             $this->validate();
@@ -120,6 +123,8 @@ class UserTransfer extends Page implements HasForms
                 ->sendToDatabase($last);
 
             return redirect()->to('/admin/transfers/usertransfer');
+        }}else{
+            Filament::notify('danger', 'ERROR! USER NOT FOUND');
         }
     }
 }
